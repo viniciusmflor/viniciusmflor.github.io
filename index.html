@@ -373,6 +373,8 @@ img { display: block; max-width: 100%; }
 .meta span { display: inline-flex; align-items: center; gap: 7px; }
 .meta .ic { font-size: 16px; color: var(--ink-3); }
 .av { width: 48px; height: 48px; border-radius: 50%; background: var(--ink); color: var(--bg); display: grid; place-items: center; font: 600 16px/1 var(--f-sans); letter-spacing: -0.03em; flex: none; }
+img.av { object-fit: cover; background: var(--surface); box-shadow: 0 0 0 1px var(--line); }
+.contact img.av { width: 56px; height: 56px; }
 .credit { font: 11px var(--f-mono); color: var(--ink-3); }
 
 @media (prefers-reduced-motion: reduce) { .page, .old .ld i { transition: none !important; animation: none !important; } }
@@ -388,6 +390,8 @@ main, .contact, footer { grid-column: 2; min-width: 0; }
 .who h1 span { color: var(--ink-3); }
 .who .st { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.45; color: var(--ink-2); max-width: 34ch; text-wrap: pretty; }
 .who .st b { color: var(--ink); font-weight: 500; }
+.who .top { display: flex; align-items: center; gap: 12px; }
+.who .top .av { width: 44px; height: 44px; }
 .who .row { display: flex; gap: 8px; flex-wrap: wrap; }
 
 .pv { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 8px; font-size: 14.5px; color: var(--ink-2); }
@@ -487,7 +491,7 @@ footer { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wr
 <div class="wrap" id="inicio">
   <aside>
     <div class="who">
-      <span class="status"><span class="dot" aria-hidden="true"></span>Aceitando novos projetos</span>
+      <div class="top"><img class="av" src="img/vinicius.webp" alt="Foto de Vinicius Flor" width="48" height="48"><span class="status"><span class="dot" aria-hidden="true"></span>Aceitando novos projetos</span></div>
       <h1>Vinicius <span>Flor</span></h1>
       <p class="st">Desenho e programo <b>sites</b>, <b>marcas</b> e <b>atendimento no WhatsApp com IA</b> para empresas que querem ser levadas a sério.</p>
       <div class="meta"><span><svg class="ic"><use href="#i-pin"/></svg>São Paulo, SP</span><span><svg class="ic"><use href="#i-clock"/></svg>Respondo no mesmo dia</span></div>
@@ -733,7 +737,7 @@ footer { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wr
   </main>
 
   <section class="contact" id="contato" aria-labelledby="ct-t">
-    <div class="h"><span class="av" aria-hidden="true">VF</span><p><b>Vinicius Flor</b>Quem responde é quem faz o seu site.</p></div>
+    <div class="h"><img class="av" src="img/vinicius.webp" alt="Foto de Vinicius Flor" width="48" height="48"><p><b>Vinicius Flor</b>Quem responde é quem faz o seu site.</p></div>
     <div>
       <h2 id="ct-t">Vamos ver o seu?</h2>
       <p class="lead">Me mande o nome da empresa ou o endereço do site. Eu respondo com um diagnóstico e uma prévia com a sua marca. O orçamento vem depois, sob medida para o tamanho do projeto.</p>
