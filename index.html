@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Sites, marcas e atendimento no WhatsApp com IA para pequenos negócios. Peça uma prévia grátis com a sua marca.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://viniciusmflor.github.io/">
+<meta property="og:title" content="Vinicius Flor · Sites, marcas e WhatsApp com IA">
+<meta property="og:description" content="Sites, marcas e atendimento no WhatsApp com IA para pequenos negócios. Peça uma prévia grátis com a sua marca.">
+<meta property="og:image" content="https://viniciusmflor.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Ctext x='16' y='21.5' font-family='Arial' font-weight='700' font-size='14' fill='%23fff' text-anchor='middle'%3EVF%3C/text%3E%3C/svg%3E">
+<title>Vinicius Flor Sites</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Archivo:wght@400;600;800&display=swap">
+<style>
+/* Base comum às quatro opções: tokens do Radar, molduras, os sites de exemplo e as ilustrações dos serviços. */
+:root {
+  --bg: #ffffff;
+  --surface: #f5f5f5;
+  --ink: #0a0a0a;
+  --ink-2: #525252;
+  --ink-3: #737373;
+  --line: #e5e5e5;
+  --signal: #00c16a;
+  --f-sans: "Geist", system-ui, sans-serif;
+  --f-mono: "Geist Mono", ui-monospace, Menlo, monospace;
+  --f-serif: "DM Serif Display", Georgia, serif;
+  --r-control: 10px;
+  --r-card: 14px;
+  --ease: cubic-bezier(.2, .6, .2, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0a0a; --surface: #151515; --ink: #f5f5f5; --ink-2: #b3b3b3; --ink-3: #8f8f8f; --line: #262626;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a0a0a; --surface: #151515; --ink: #f5f5f5; --ink-2: #b3b3b3; --ink-3: #8f8f8f; --line: #262626;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-sans); font-size: 16px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.04em; line-height: 1.02; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
+.mono { font-family: var(--f-mono); letter-spacing: -0.02em; }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--ink-3); text-transform: uppercase; }
+
+.logo { display: inline-flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 600; letter-spacing: -0.02em; text-decoration: none; }
+.logo::before { content: ""; width: 12px; height: 12px; background: var(--ink); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: var(--r-control); background: var(--ink); color: var(--bg); text-decoration: none; font-size: 15px; font-weight: 500; border: 1px solid var(--ink); transition: opacity .2s; white-space: nowrap; }
+.btn:hover { opacity: .86; }
+.btn.line { background: transparent; color: var(--ink); border-color: var(--line); }
+
+.status { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px 6px 10px; width: fit-content; }
+.dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--signal); flex: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .dot::after { content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 1.5px solid var(--signal); animation: sonar 3.2s cubic-bezier(.2,.6,.3,1) infinite; }
+}
+@keyframes sonar { from { transform: scale(1); opacity: .55; } to { transform: scale(3.2); opacity: 0; } }
+
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tags span { font: 12px var(--f-mono); color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+
+/* ---------- molduras ---------- */
+.browser { border-radius: var(--r-card); overflow: hidden; border: 1px solid rgba(0,0,0,.08); background: #fff; container-type: inline-size; max-width: 100%; }
+.bar { height: 28px; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-bottom: 1px solid #ececec; background: #fafafa; }
+.bar i { width: 8px; height: 8px; border-radius: 50%; background: #dcdcdc; display: block; flex: none; }
+.bar span { margin: 0 auto; font: 11px var(--f-mono); color: #8a8a8a; transform: translateX(-12px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; }
+.view { aspect-ratio: 16 / 10; overflow: hidden; position: relative; max-width: 100%; }
+.page { position: absolute; inset: 0 0 auto 0; transition: transform 2.4s var(--ease); }
+.hov:hover .page, .hov:focus-within .page, .hov:focus .page, .hov.on .page { transform: translateY(calc(-100% + 62.5cqw)); }
+.phone { border-radius: 24px; border: 5px solid #0a0a0a; background: #0a0a0a; overflow: hidden; aspect-ratio: 9 / 19; container-type: inline-size; box-shadow: 0 24px 50px -24px rgba(0,0,0,.5); max-width: 100%; }
+.phone img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ---------- sites de exemplo (em cqw: escalam como uma captura de tela) ---------- */
+.s { font-size: 1.5cqw; line-height: 1.4; }
+.s img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Oficina Cumaru */
+.cu { background: #15110d; color: #efe6da; font-family: var(--f-sans); }
+.cu .nv { display: flex; justify-content: space-between; align-items: center; padding: 2.4cqw 4cqw; font-size: 1.25cqw; color: #bfb2a2; }
+.cu .nv b { font: 400 2.3cqw/1 var(--f-serif); color: #efe6da; letter-spacing: .02em; }
+.cu .nv span { display: flex; gap: 2.6cqw; }
+.cu .hr { display: grid; grid-template-columns: 1fr 1fr; gap: 4cqw; padding: 1cqw 4cqw 0; align-items: end; height: 52cqw; }
+.cu small { font: 1.05cqw var(--f-mono); letter-spacing: .12em; color: #a8927a; text-transform: uppercase; }
+.cu h4 { margin: 1.6cqw 0 2cqw; font: 400 6.4cqw/0.98 var(--f-serif); letter-spacing: -.02em; }
+.cu .hr p { color: #bfb2a2; font-size: 1.45cqw; max-width: 34ch; margin-bottom: 2.4cqw; }
+.cu .b { display: inline-block; background: #efe6da; color: #15110d; padding: 1.1cqw 2cqw; border-radius: 99px; font-size: 1.25cqw; font-weight: 500; margin-bottom: 4cqw; }
+.cu .ph { height: 100%; border-radius: 1cqw 1cqw 0 0; overflow: hidden; }
+.cu .det { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 1.6cqw; padding: 4cqw; background: #1c1712; }
+.cu .det .t h5 { margin: 0 0 1.2cqw; font: 400 3.4cqw/1 var(--f-serif); }
+.cu .det .t p { color: #bfb2a2; font-size: 1.35cqw; }
+.cu .det figure { margin: 0; display: grid; gap: .8cqw; }
+.cu .det figure div { height: 26cqw; border-radius: 1cqw; overflow: hidden; }
+.cu .det figcaption { font: 1.05cqw var(--f-mono); color: #a8927a; }
+.cu .ft { display: flex; justify-content: space-between; align-items: center; padding: 3cqw 4cqw; border-top: 1px solid #2c241c; font-size: 1.3cqw; }
+.cu .ft b { font: 400 2.6cqw var(--f-serif); }
+.cu .wa { background: #1f7a4a; color: #fff; padding: 1.1cqw 2cqw; border-radius: 99px; }
+
+/* Duna Clara */
+.du { background: #f3eee6; color: #1d2a2e; font-family: var(--f-sans); }
+.du .hr { position: relative; height: 56cqw; color: #fff; }
+.du .hr img { position: absolute; inset: 0; object-position: 50% 62%; }
+.du .hr::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,0) 35%, rgba(0,0,0,.35)); }
+.du .nv { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; padding: 2.4cqw 4cqw; font-size: 1.25cqw; }
+.du .nv b { font: italic 400 2.6cqw/1 var(--f-serif); }
+.du .nv span { display: flex; gap: 2.4cqw; }
+.du .tx { position: absolute; z-index: 1; left: 4cqw; bottom: 12cqw; }
+.du small { font: 1.05cqw var(--f-mono); letter-spacing: .12em; text-transform: uppercase; }
+.du h4 { margin: 1cqw 0 0; font: 400 6.6cqw/0.98 var(--f-serif); letter-spacing: -.02em; max-width: 12ch; }
+.du .bk { position: absolute; z-index: 1; left: 4cqw; right: 4cqw; bottom: 3.4cqw; background: #fff; color: #1d2a2e; border-radius: 1.4cqw; display: grid; grid-template-columns: repeat(3, 1fr) auto; align-items: center; padding: 1.2cqw; gap: 1cqw; }
+.du .bk div { padding: 0 1.4cqw; border-right: 1px solid #e6e1d8; font-size: 1.35cqw; font-weight: 500; }
+.du .bk div small { display: block; font: 1cqw var(--f-mono); letter-spacing: .06em; color: #7c8a8e; }
+.du .bk em { font-style: normal; background: #1d2a2e; color: #fff; padding: 1.3cqw 2.2cqw; border-radius: 99px; font-size: 1.3cqw; font-weight: 500; }
+.du .rooms { padding: 4.4cqw 4cqw; display: grid; gap: 2.4cqw; }
+.du .rooms .h { display: flex; justify-content: space-between; align-items: end; }
+.du .rooms h5 { margin: 0; font: 400 3.6cqw/1 var(--f-serif); }
+.du .rooms .h span { font-size: 1.3cqw; color: #5f6d70; }
+.du .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2cqw; }
+.du .room div { height: 30cqw; border-radius: 1cqw; overflow: hidden; }
+.du .room p { margin-top: 1.2cqw; display: flex; justify-content: space-between; font-size: 1.4cqw; font-weight: 500; }
+.du .room p span { font: 1.25cqw var(--f-mono); color: #5f6d70; font-weight: 400; }
+
+/* Casa Tição */
+.lu { background: #0e0d0c; color: #f2ede6; font-family: "Archivo", sans-serif; }
+.lu .nv { display: flex; justify-content: space-between; align-items: center; padding: 2.4cqw 4cqw; font-size: 1.25cqw; color: #a39c92; }
+.lu .nv b { font-weight: 800; font-size: 2.2cqw; letter-spacing: -.03em; color: #f2ede6; }
+.lu .nv b i, .lum .nv b i { font-style: normal; color: #e0803a; }
+.lu .nv em { font-style: normal; border: 1px solid #f2ede6; color: #f2ede6; padding: .8cqw 1.6cqw; border-radius: 99px; }
+.lu .hr { display: grid; grid-template-columns: 1fr 1fr; height: 50cqw; }
+.lu .hr .ph { overflow: hidden; }
+.lu .hr .tx { padding: 4cqw; display: grid; align-content: end; gap: 1.6cqw; }
+.lu small { font: 1.05cqw var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: #e0803a; }
+.lu h4 { margin: 0; font-weight: 800; font-size: 5.6cqw; line-height: .95; letter-spacing: -.045em; }
+.lu .hr p { color: #a39c92; font-size: 1.45cqw; max-width: 32ch; }
+.lu .b { background: #e0803a; color: #0e0d0c; width: fit-content; padding: 1.1cqw 2cqw; border-radius: 99px; font-weight: 600; font-size: 1.3cqw; }
+.lu .menu { display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 1.6cqw; padding: 4cqw; }
+.lu .menu .ph { height: 30cqw; border-radius: 1cqw; overflow: hidden; }
+.lu .menu ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 1.4cqw; align-content: start; }
+.lu .menu li { display: flex; justify-content: space-between; gap: 1cqw; border-bottom: 1px solid #2a2724; padding-bottom: 1.2cqw; font-size: 1.4cqw; }
+.lu .menu li span { font: 1.2cqw var(--f-mono); color: #a39c92; }
+.lu .menu h5 { margin: 0 0 .6cqw; font-weight: 800; font-size: 2.6cqw; letter-spacing: -.03em; }
+
+/* versões de celular */
+.m { height: 100%; display: grid; font-family: var(--f-sans); }
+.m .nv { display: flex; justify-content: space-between; align-items: center; padding: 8cqw 7cqw 5cqw; }
+.m .nv > span:last-child { width: 7cqw; height: 4cqw; border-top: 2px solid currentColor; border-bottom: 2px solid currentColor; }
+.m small { font: 3cqw var(--f-mono); letter-spacing: .1em; text-transform: uppercase; }
+.m .b { padding: 4cqw; border-radius: 99px; font-weight: 600; font-size: 4.4cqw; text-align: center; }
+.cum { background: #15110d; color: #efe6da; grid-template-rows: auto auto 1fr auto; }
+.cum .nv b { font: 400 7cqw/1 var(--f-serif); }
+.cum .tx { padding: 2cqw 7cqw 6cqw; }
+.cum small { color: #a8927a; }
+.cum h4 { margin: 3cqw 0 0; font: 400 11.5cqw/0.98 var(--f-serif); letter-spacing: -.02em; }
+.cum .ph { margin: 0 4cqw; border-radius: 4cqw; overflow: hidden; }
+.cum .ac { padding: 6cqw 7cqw 8cqw; }
+.cum .b { background: #efe6da; color: #15110d; }
+.dum { background: #f3eee6; color: #1d2a2e; grid-template-rows: 1fr auto; }
+.dum .hr { position: relative; overflow: hidden; color: #fff; display: grid; grid-template-rows: auto 1fr; }
+.dum .hr img { position: absolute; inset: 0; object-position: 50% 62%; }
+.dum .hr::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.3), rgba(0,0,0,0) 40%, rgba(0,0,0,.4)); }
+.dum .nv, .dum .tx { position: relative; z-index: 1; }
+.dum .nv b { font: italic 400 7.4cqw/1 var(--f-serif); }
+.dum .tx { align-self: end; padding: 0 7cqw 7cqw; }
+.dum h4 { margin: 2cqw 0 0; font: 400 11cqw/0.98 var(--f-serif); letter-spacing: -.02em; }
+.dum .bk { padding: 5cqw 5cqw 7cqw; display: grid; gap: 3cqw; }
+.dum .bk .d { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5cqw; }
+.dum .bk .d div { background: #fff; border-radius: 3cqw; padding: 3cqw 3.5cqw; font-size: 4.2cqw; font-weight: 500; }
+.dum .bk .d small { display: block; font-size: 2.6cqw; color: #7c8a8e; }
+.dum .b { background: #1d2a2e; color: #fff; }
+.lum { background: #0e0d0c; color: #f2ede6; font-family: "Archivo", sans-serif; grid-template-rows: auto 1fr auto; }
+.lum .nv b { font-weight: 800; font-size: 7cqw; letter-spacing: -.03em; }
+.lum .ph { overflow: hidden; margin: 0 4cqw; border-radius: 4cqw; }
+.lum .tx { padding: 7cqw; display: grid; gap: 4cqw; }
+.lum h4 { margin: 0; font-weight: 800; font-size: 11cqw; line-height: .95; letter-spacing: -.045em; }
+.lum .b { background: #e0803a; color: #0e0d0c; }
+
+/* Radar (projeto próprio): página inicial e lista no celular */
+.ra { background: #fff; color: #0a0a0a; font-family: var(--f-sans); }
+.ra .nv { display: flex; justify-content: space-between; align-items: center; padding: 1.2cqw 3.1cqw; height: 5cqw; }
+.ra .nv b, .ram .hd b, .kl-ra b { display: flex; align-items: center; gap: .62cqw; font-size: 1.33cqw; font-weight: 600; letter-spacing: -0.02em; }
+.ra .nv b i, .ram .hd b i, .kl-ra b i { width: .94cqw; height: .94cqw; background: #0a0a0a; display: block; }
+.ra .nv > span { display: flex; align-items: center; gap: 1.56cqw; font-size: 1.1cqw; color: #525252; }
+.ra .nv em, .ra .fm em { font-style: normal; background: #0a0a0a; color: #fff; padding: .9cqw 1.25cqw; border-radius: .8cqw; font-weight: 500; }
+.ra .hr { display: grid; grid-template-columns: 1fr 1fr; gap: 3.75cqw; align-items: center; padding: 3.1cqw 3.1cqw 4.4cqw; }
+.ra small { font: .94cqw var(--f-mono); letter-spacing: .08em; color: #737373; }
+.ra h4 { margin: 1.4cqw 0 0; font-size: 4.7cqw; line-height: 1.02; font-weight: 600; letter-spacing: -0.04em; }
+.ra .hr p { margin-top: 1.56cqw; font-size: 1.4cqw; line-height: 1.5; color: #525252; }
+.ra .fm { display: flex; gap: .62cqw; margin-top: 2.2cqw; font-size: 1.17cqw; }
+.ra .fm span { flex: 1; border: 1px solid #d4d4d4; border-radius: .94cqw; padding: 1.1cqw; color: #a3a3a3; }
+.ra .fm em { border-radius: .94cqw; padding: 1.1cqw 1.56cqw; }
+.ra .ft { display: block; margin-top: .94cqw; font-family: var(--f-sans); letter-spacing: 0; }
+.ra .map, .ram .map { position: relative; background: #f2f2f2; overflow: hidden; }
+.ra .map { height: 32.8cqw; border-radius: 1.56cqw; }
+.ra .rd, .ram .rd { position: absolute; background: #fff; }
+.ra .rd.h1 { left: 0; right: 0; top: 30%; height: .62cqw; } .ra .rd.h2 { left: 0; right: 0; top: 72%; height: .47cqw; }
+.ra .rd.v1 { top: 0; bottom: 0; left: 26%; width: .47cqw; } .ra .rd.v2 { top: 0; bottom: 0; left: 70%; width: .62cqw; }
+.ra .ci, .ram .ci { position: absolute; border-radius: 50%; border: 1.5px solid #0a0a0a; background: rgba(0,193,106,.08); }
+.ra .ci { width: 20.3cqw; height: 20.3cqw; left: calc(50% - 10.15cqw); top: calc(42% - 10.15cqw); }
+.ra .ce, .ram .ce { position: absolute; border-radius: 50%; background: #0a0a0a; border: .3cqw solid #fff; }
+.ra .ce { width: 1.4cqw; height: 1.4cqw; left: calc(50% - .7cqw); top: calc(42% - .7cqw); }
+.ra .pin, .ram .pin { position: absolute; background: #0a0a0a; color: #fff; font: .94cqw var(--f-mono); padding: .3cqw .62cqw; border-radius: 99px; }
+.ra .pin.out { background: #fff; color: #737373; border: 1px dashed #b5b5b5; }
+.ra .card { position: absolute; left: 1.9cqw; bottom: 1.9cqw; width: 28cqw; background: #fff; border: 1px solid #e5e5e5; border-radius: 1.1cqw; padding: 1.1cqw 1.25cqw; display: grid; gap: .3cqw; }
+.ra .card .ln1 { display: flex; align-items: center; gap: .62cqw; font-size: .94cqw; color: #525252; }
+.ra .card .ln1 i { width: .62cqw; height: .62cqw; border-radius: 50%; background: #00c16a; }
+.ra .card b { font-size: 1.17cqw; font-weight: 500; }
+.ra .card span { font: 1.02cqw var(--f-mono); letter-spacing: -0.02em; }
+.ra .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5cqw; margin: 0 3.1cqw; padding: 2.2cqw 0 4.4cqw; border-top: 1px solid #e5e5e5; }
+.ra .how h5 { margin: .6cqw 0 0; font-size: 1.4cqw; font-weight: 600; letter-spacing: -0.01em; }
+.ra .how p { margin-top: .5cqw; font-size: 1.1cqw; line-height: 1.55; color: #525252; }
+.ram { height: 100%; background: #fff; color: #0a0a0a; font-family: var(--f-sans); display: flex; flex-direction: column; font-size: 3.6cqw; }
+.ram .hd { display: flex; justify-content: space-between; align-items: center; padding: 6cqw 4cqw 3cqw; }
+.ram .hd b { font-size: 4.4cqw; gap: 2cqw; } .ram .hd b i { width: 3cqw; height: 3cqw; }
+.ram .hd span { width: 10cqw; height: 10cqw; border-radius: 50%; border: 1px solid #e5e5e5; display: grid; place-items: center; font-size: 5cqw; }
+.ram .sel { margin: 0 4cqw; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e5e5e5; border-radius: 3cqw; padding: 3cqw 3.6cqw; font-weight: 500; }
+.ram .seg { margin: 3cqw 4cqw 0; display: flex; gap: 1cqw; padding: 1cqw; background: #f5f5f5; border-radius: 3cqw; font-size: 3.2cqw; color: #525252; }
+.ram .seg span { flex: 1; text-align: center; padding: 2.2cqw 0; border-radius: 2.3cqw; }
+.ram .seg .on { background: #fff; border: 1px solid #e5e5e5; color: #0a0a0a; font-weight: 500; }
+.ram .map { margin: 3.6cqw 4cqw 0; height: 40cqw; border-radius: 3.6cqw; flex: none; }
+.ram .rd.h1 { left: 0; right: 0; top: 40%; height: 1.5cqw; } .ram .rd.v1 { top: 0; bottom: 0; left: 30%; width: 1.3cqw; } .ram .rd.v2 { top: 0; bottom: 0; left: 74%; width: 1.5cqw; }
+.ram .ci { width: 34cqw; height: 34cqw; left: calc(50% - 17cqw); top: calc(50% - 17cqw); }
+.ram .ce { width: 3.6cqw; height: 3.6cqw; left: calc(50% - 1.8cqw); top: calc(50% - 1.8cqw); }
+.ram .pin { font-size: 2.8cqw; padding: .8cqw 1.8cqw; }
+.ram .pin.new { background: #00c16a; color: #0a0a0a; }
+.ram .km { position: absolute; right: 2.6cqw; bottom: 2.6cqw; background: #0a0a0a; color: #fff; font: 2.8cqw var(--f-mono); padding: .8cqw 2cqw; border-radius: 1.5cqw; }
+.ram small { margin: 4cqw 6cqw 1.5cqw; font: 2.8cqw var(--f-mono); letter-spacing: .06em; color: #737373; }
+.ram .rows { flex: 1; padding: 0 2cqw; display: grid; gap: .5cqw; align-content: start; overflow: hidden; }
+.ram .rows > div { display: grid; grid-template-columns: 12cqw minmax(0, 1fr) auto; gap: 3cqw; align-items: center; padding: 2.4cqw 2cqw; border-radius: 3cqw; }
+.ram .rows > div.on { background: #f5f5f5; }
+.ram .rows i { width: 12cqw; height: 12cqw; border-radius: 2cqw; background: #e2e2e2; }
+.ram .rows b { display: flex; align-items: center; gap: 1.5cqw; font-size: 3.5cqw; font-weight: 500; white-space: nowrap; overflow: hidden; }
+.ram .rows b em { width: 1.8cqw; height: 1.8cqw; border-radius: 50%; background: #00c16a; flex: none; }
+.ram .rows div span { display: block; font-size: 3cqw; color: #737373; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ram .rows p { margin: 0; text-align: right; font: 500 3.7cqw var(--f-mono); letter-spacing: -0.02em; }
+.ram .rows p span { display: block; font: 2.8cqw var(--f-sans); color: #737373; }
+.ram .tb { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #e5e5e5; text-align: center; font-size: 2.8cqw; color: #737373; padding: 2.4cqw 0 4cqw; line-height: 1.3; }
+.ram .tb .on { color: #0a0a0a; font-weight: 500; }
+
+/* ficha da marca de cada projeto: logo, cores e fontes */
+.kit { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.15fr) minmax(0, .7fr); gap: 8px; }
+.kit > div { border: 1px solid var(--line); border-radius: 14px; padding: 14px; min-width: 0; }
+.kh { font: 11px var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.kl { container-type: inline-size; min-height: 120px; display: flex; align-items: center; justify-content: center; gap: 12px; border-color: transparent !important; }
+.kl-ra { background: #fff; color: #0a0a0a; box-shadow: inset 0 0 0 1px #e5e5e5; }
+.kl-ra b { font-size: 34px; gap: 10px; } .kl-ra b i { width: 24px; height: 24px; }
+.kl-cu { background: #15110d; color: #efe6da; }
+.kl-cu .mk { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #efe6da; display: grid; place-items: center; font: 400 22px/1 var(--f-serif); flex: none; }
+.kl-cu b { font: 400 25px/0.95 var(--f-serif); }
+.kl-du { background: #f3eee6; color: #1d2a2e; flex-direction: column; gap: 8px; }
+.kl-du .mk { width: 44px; height: 22px; border-radius: 44px 44px 0 0; background: #1d2a2e; position: relative; }
+.kl-du .mk::after { content: ""; position: absolute; left: -10px; right: -10px; bottom: -6px; height: 2px; background: #1d2a2e; border-radius: 2px; }
+.kl-du b { font: italic 400 30px/1 var(--f-serif); margin-top: 4px; }
+.kl-lu { background: #0e0d0c; color: #f2ede6; }
+.kl-lu b { font: 800 36px/1 "Archivo", sans-serif; letter-spacing: -0.04em; }
+.kl-lu b i { font-style: normal; color: #e0803a; }
+.kc, .kt { display: grid; gap: 10px; align-content: start; }
+.ks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.ks div { display: grid; gap: 6px; }
+.ks i { display: block; height: 44px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(128,128,128,.25); }
+.ks code { font: 10.5px var(--f-mono); color: var(--ink-2); letter-spacing: -0.02em; overflow: hidden; text-overflow: ellipsis; }
+.kt b { font-size: 40px; line-height: 1; font-weight: 400; }
+.kt > span { font-size: 12.5px; color: var(--ink-2); line-height: 1.4; }
+.kit.v { grid-template-columns: minmax(0, 1fr); grid-template-rows: 1fr auto auto; }
+.kit.v .kl { grid-column: auto; }
+@media (max-width: 640px) {
+  .kit { grid-template-columns: minmax(0, 1fr) minmax(0, .62fr); }
+  .kit .kl { grid-column: 1 / -1; min-height: 104px; }
+  .ks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---------- antes e depois ---------- */
+.cmp { position: relative; --pos: 50%; user-select: none; }
+.cmp .lay { position: absolute; inset: 0; overflow: hidden; }
+.cmp .lay.before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); z-index: 2; }
+.cmp .hd { position: absolute; top: 28px; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: #fff; z-index: 3; box-shadow: 0 0 0 1px rgba(0,0,0,.12); pointer-events: none; }
+.cmp .hd::after { content: "\2039\00a0\00a0\203A"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; background: #fff; color: #0a0a0a; display: grid; place-items: center; font: 600 16px/1 var(--f-sans); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+.cmp input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; z-index: 4; }
+.cmp:has(input:focus-visible) .browser { outline: 2px solid var(--ink); outline-offset: 3px; }
+.cmp .tag { position: absolute; bottom: 12px; z-index: 3; font: 500 11px/1 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; padding: 6px 9px; border-radius: 999px; background: rgba(10,10,10,.8); color: #fff; pointer-events: none; }
+.cmp .tag.b { left: 12px; } .cmp .tag.a { right: 12px; }
+.old { background: #e9e9e9; font-family: "Times New Roman", serif; color: #333; height: 100%; display: flex; flex-direction: column; font-size: 1.5cqw; }
+.old .hd2 { background: linear-gradient(#6a8cc4, #2c4a7a); padding: 1.8cqw 2.4cqw; display: flex; justify-content: space-between; align-items: center; }
+.old .hd2 b { font: italic 700 3.2cqw/1 Georgia, serif; color: #fff7c2; text-shadow: .2cqw .2cqw 0 #1b2c4a; }
+.old .hd2 span { color: #fff; font: 1.3cqw Arial, sans-serif; }
+.old nav { background: #1b2c4a; color: #ffd84a; font: 700 1.2cqw Verdana, sans-serif; padding: .8cqw 2.4cqw; display: flex; gap: 1.2cqw; flex-wrap: wrap; }
+.old .mq { color: #d10000; font: 700 1.35cqw "Comic Sans MS", "Trebuchet MS", sans-serif; text-align: center; padding: .8cqw; background: #fffbe0; border-bottom: 1px dashed #c9b200; }
+.old .bd { display: grid; grid-template-columns: 22% 1fr; gap: 1.6cqw; padding: 1.8cqw 2.4cqw; flex: 1; min-height: 0; }
+.old aside { background: #d4d4d4; border: 1px solid #aaa; padding: 1.2cqw; font: 1.15cqw Arial, sans-serif; color: #444; display: grid; gap: .6cqw; align-content: start; }
+.old aside u { color: #1a0dab; }
+.old h5 { margin: 0 0 .8cqw; font: 700 2.6cqw "Times New Roman", serif; color: #2c4a7a; }
+.old p { font: 1.15cqw/1.45 Arial, sans-serif; color: #8a8a8a; }
+.old .g { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1cqw; margin-top: 1.6cqw; }
+.old .g div { height: 9cqw; background: repeating-linear-gradient(45deg, #bdbdbd 0 .6cqw, #c9c9c9 .6cqw 1.2cqw); border: .3cqw solid #fff; outline: 1px solid #999; display: grid; place-items: center; font: 1.05cqw Arial; color: #666; }
+.old .ld { display: flex; align-items: center; gap: .8cqw; margin-top: 1.4cqw; font: italic 1.15cqw Arial; color: #777; }
+.old .ld i { width: 1.8cqw; height: 1.8cqw; border: .3cqw solid #bbb; border-top-color: #2c4a7a; border-radius: 50%; display: block; animation: spin 1s linear infinite; }
+.old .f2 { background: #1b2c4a; color: #9fb0cc; text-align: center; font: 1cqw Arial; padding: .9cqw; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.diff { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.diff div { display: grid; gap: 4px; align-content: start; }
+.diff .was { color: var(--ink-3); font-size: 13px; text-decoration: line-through; }
+.diff .now { font-size: 15px; font-weight: 500; }
+
+/* ---------- ilustrações dos serviços ---------- */
+.vis { container-type: inline-size; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; position: relative; max-width: 100%; }
+/* site */
+.v-site { background: #e7dccb; }
+.v-site .mb { position: absolute; left: 8cqw; top: 12cqw; width: 70cqw; border-radius: 2.4cqw; overflow: hidden; background: #fff; box-shadow: 0 4cqw 8cqw -5cqw rgba(0,0,0,.35); }
+.v-site .mb > i { display: block; height: 5cqw; background: #fafafa; border-bottom: 1px solid #eee; }
+.v-site .mb div { position: relative; height: 40cqw; }
+.v-site .mb img, .v-site .mp img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+.v-site .mb b { position: absolute; left: 5cqw; bottom: 5cqw; color: #fff; font: 400 6cqw/1 var(--f-serif); text-shadow: 0 1px 8px rgba(0,0,0,.3); }
+.v-site .mp { position: absolute; right: 8cqw; bottom: -6cqw; width: 26cqw; aspect-ratio: 9 / 18; border-radius: 4cqw; border: 1.4cqw solid #0a0a0a; overflow: hidden; box-shadow: 0 4cqw 8cqw -4cqw rgba(0,0,0,.45); }
+/* marca */
+.v-brand { background: #15110d; color: #efe6da; }
+.v-brand .in { position: absolute; inset: 0; display: grid; grid-template-rows: 1fr auto; padding: 8cqw; }
+.v-brand .mk { display: flex; align-items: center; gap: 4cqw; align-self: center; }
+.v-brand .mk span { width: 19cqw; aspect-ratio: 1; border-radius: 50%; border: .6cqw solid #efe6da; display: grid; place-items: center; font: 400 9cqw/1 var(--f-serif); flex: none; }
+.v-brand .mk b { font: 400 11cqw/0.95 var(--f-serif); letter-spacing: -.01em; }
+.v-brand .sw { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.4cqw; }
+.v-brand .sw div { display: grid; gap: 1.6cqw; font: 2.6cqw var(--f-mono); color: #a8927a; }
+.v-brand .sw i { display: block; height: 11cqw; border-radius: 2cqw; border: 1px solid rgba(255,255,255,.12); }
+/* WhatsApp */
+.v-chat { background: #e4ece6; color: #14211a; }
+.v-chat .in { position: absolute; inset: 0; padding: 0 7cqw 7cqw; display: grid; gap: 2.6cqw; align-content: start; font-size: 3.8cqw; line-height: 1.3; }
+.v-chat p { margin: 0; font-size: 3.8cqw; color: #14211a; max-width: 74%; padding: 2.6cqw 3.6cqw; border-radius: 3.6cqw; background: #fff; box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+.v-chat p.me { justify-self: end; background: #d3f1d8; border-bottom-right-radius: 1cqw; }
+.v-chat p.bot { border-bottom-left-radius: 1cqw; }
+.v-chat .hdr { display: flex; align-items: center; gap: 2.6cqw; margin: 0 -7cqw 1.4cqw; padding: 3.4cqw 7cqw; background: #14211a; color: #e4ece6; font-size: 3.2cqw; line-height: 1.25; }
+.v-chat .hdr i { width: 8cqw; height: 8cqw; border-radius: 50%; background: #efe6da; color: #15110d; display: grid; place-items: center; font: normal 400 4.4cqw/1 var(--f-serif); flex: none; }
+.v-chat .hdr span { display: grid; color: #8fd3a8; }
+.v-chat .hdr b { color: #e4ece6; font-weight: 600; font-size: 3.6cqw; }
+.v-chat .ch { display: flex; gap: 1.8cqw; flex-wrap: wrap; }
+.v-chat .ch span { border: 1px solid #9fbfaa; color: #1f6b3e; background: #f4faf5; border-radius: 99px; padding: 1.4cqw 3cqw; font-size: 3.2cqw; font-weight: 500; }
+.v-chat .sum { margin-top: 1cqw; background: #14211a; color: #e4ece6; border-radius: 3cqw; padding: 3cqw 3.6cqw; display: grid; gap: .8cqw; font: 3cqw/1.35 var(--f-mono); }
+.v-chat .sum b { color: #7ee2a3; font-weight: 500; }
+
+/* ---------- contato ---------- */
+.lines { display: grid; }
+.ln { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; padding-block: 14px; border-top: 1px solid var(--line); }
+.ln:last-child { border-bottom: 1px solid var(--line); }
+.ln .ico { width: 40px; height: 40px; border-radius: var(--r-control); background: var(--surface); border: 1px solid var(--line); display: grid; place-items: center; font-size: 18px; color: var(--ink); }
+.ln small { display: block; font: 12px var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.ln .v { font: 17px var(--f-mono); letter-spacing: -0.02em; white-space: nowrap; }
+@media (max-width: 420px) { .ln .v { font-size: 16px; } .ln button b { display: none; } .ln button { padding: 0 11px; } }
+.ln .v em { font-style: normal; color: var(--ink-3); }
+.ln button { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 13px; background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: var(--r-control); min-height: 36px; padding: 0 12px; cursor: pointer; }
+.ln button b { font-weight: 500; }
+.ln button:hover { border-color: var(--ink-3); }
+
+.wa-go { margin-top: 14px; width: fit-content; }
+
+/* ícones (traço fino, herdam a cor do texto) */
+.ic { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.btn .ic { font-size: 17px; transition: transform .25s var(--ease); }
+.btn:hover .ic { transform: translateX(3px); }
+.meta { display: flex; gap: 8px 20px; flex-wrap: wrap; font-size: 14px; color: var(--ink-2); }
+.meta span { display: inline-flex; align-items: center; gap: 7px; }
+.meta .ic { font-size: 16px; color: var(--ink-3); }
+.av { width: 48px; height: 48px; border-radius: 50%; background: var(--ink); color: var(--bg); display: grid; place-items: center; font: 600 16px/1 var(--f-sans); letter-spacing: -0.03em; flex: none; }
+.credit { font: 11px var(--f-mono); color: var(--ink-3); }
+
+@media (prefers-reduced-motion: reduce) { .page, .old .ld i { transition: none !important; animation: none !important; } }
+@media (max-width: 700px) { .diff { grid-template-columns: 1fr; } }
+
+/* Opção D, Estúdio: duas colunas. À esquerda, fixa, a pessoa (nome em destaque, o que faz, serviços); à direita, rolando, os sites e o contato. */
+.wrap { max-width: 1320px; margin-inline: auto; display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); column-gap: clamp(40px, 6vw, 88px); row-gap: 96px; padding-block: 36px 48px; align-items: start; }
+aside { grid-row: 1 / span 3; position: sticky; top: 36px; display: grid; gap: 26px; }
+main, .contact, footer { grid-column: 2; min-width: 0; }
+
+.who { display: grid; gap: 18px; }
+.who h1 { font-size: clamp(3.2rem, 5.6vw, 5.4rem); letter-spacing: -0.06em; line-height: .9; }
+.who h1 span { color: var(--ink-3); }
+.who .st { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.45; color: var(--ink-2); max-width: 34ch; text-wrap: pretty; }
+.who .st b { color: var(--ink); font-weight: 500; }
+.who .row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.pv { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 8px; font-size: 14.5px; color: var(--ink-2); }
+.pv li { display: flex; align-items: center; gap: 10px; }
+.pv .ic { font-size: 16px; color: var(--ink-3); }
+.touch { display: none; align-items: center; gap: 8px; font: 12px var(--f-mono); color: var(--ink-3); margin: 28px 0 -60px; }
+.touch .ic { font-size: 16px; }
+@media (hover: none) { .touch { display: flex; } }
+.faq { display: grid; gap: 0; }
+.faq > .eyebrow { margin-bottom: 14px; }
+.faq details { border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; font-size: clamp(17px, 1.5vw, 19px); font-weight: 500; letter-spacing: -0.02em; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .ic { font-size: 18px; color: var(--ink-3); transition: transform .25s var(--ease); }
+.faq details[open] summary .ic { transform: rotate(45deg); }
+.faq details p { color: var(--ink-2); font-size: 16px; padding: 0 40px 20px 0; max-width: 60ch; }
+.mcta { display: none; }
+@media (max-width: 960px) {
+  .mcta { display: flex; position: fixed; z-index: 20; left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); min-height: 52px; box-shadow: 0 12px 30px -10px rgba(0,0,0,.45); transform: translateY(160%); transition: transform .35s var(--ease); }
+  .mcta.show { transform: none; }
+}
+.group { display: grid; gap: 8px; }
+.group > .eyebrow { margin-bottom: 4px; }
+.sv { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 16px; align-items: center; background: var(--surface); border: 1px solid transparent; border-radius: 14px; padding: 7px; transition: border-color .2s; }
+.sv:hover { border-color: var(--line); }
+.sv .vis { border-radius: 8px; }
+.sv .tx b { display: flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; }
+.sv .tx b .ic { font-size: 16px; color: var(--ink-3); }
+.sv .tx span { display: block; color: var(--ink-2); font-size: 14.5px; margin-top: 3px; }
+
+main { display: grid; gap: 88px; }
+.mh { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: -40px; }
+.mh h2 { font-size: 15px; letter-spacing: -0.01em; font-weight: 600; }
+.mh span { font: 12px var(--f-mono); color: var(--ink-3); }
+.proj { display: grid; gap: 22px; outline-offset: 8px; }
+.proj .kit { margin-left: 60px; }
+.shot { position: relative; padding: 0 11% 9% 0; }
+.shot .browser { box-shadow: 0 28px 60px -32px rgba(0,0,0,.4); }
+.shot .phone { position: absolute; right: 0; bottom: 0; width: 25%; transition: transform .6s var(--ease); }
+.proj:hover .shot .phone { transform: translateY(-8px); }
+.cap { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 6px 16px; align-items: start; }
+.cap .n { font: 13px/30px var(--f-mono); color: var(--ink-3); }
+.cap h3 { font-size: clamp(24px, 2.3vw, 30px); letter-spacing: -0.035em; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.chip { display: inline-flex; align-items: center; gap: 8px; font: 500 12px var(--f-mono); letter-spacing: -0.01em; color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px 5px 9px; }
+.cap p { color: var(--ink-2); font-size: 16px; margin-top: 8px; max-width: 44ch; }
+.cap .tags { padding-top: 6px; justify-content: flex-end; }
+
+.ba { display: grid; gap: 22px; }
+.ba .h { display: flex; justify-content: space-between; align-items: end; gap: 12px; flex-wrap: wrap; }
+.ba h2 { font-size: clamp(2rem, 3.4vw, 2.8rem); margin-top: 10px; }
+.hint { display: inline-flex; align-items: center; gap: 8px; font: 12px var(--f-mono); color: var(--ink-3); }
+.hint .ic { font-size: 16px; }
+
+.contact { background: var(--surface); border-radius: 24px; padding: clamp(24px, 4vw, 48px); display: grid; gap: 28px; }
+.contact .h { display: flex; align-items: center; gap: 14px; }
+.contact .h p { font-size: 15px; color: var(--ink-2); line-height: 1.35; }
+.contact .h p b { display: block; color: var(--ink); font-weight: 600; }
+.contact h2 { font-size: clamp(2.6rem, 4.8vw, 4.2rem); letter-spacing: -0.05em; }
+.contact .lead { font-size: 18px; color: var(--ink-2); margin-top: 14px; max-width: 40ch; }
+.contact .ico { background: var(--bg); }
+footer { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--ink-3); margin-top: -64px; }
+
+@media (max-height: 800px) and (min-width: 961px) { aside { position: static; } }
+@media (max-width: 960px) {
+  .wrap { grid-template-columns: 1fr; row-gap: 40px; }
+  aside { display: contents; }
+  .who { order: 1; } main { order: 2; margin-top: 24px; } aside .group { order: 3; margin-top: 40px; } .contact { order: 4; } footer { order: 5; margin-top: 0; }
+  main, .contact, footer { grid-column: auto; }
+  main { gap: 64px; }
+  .cap { grid-template-columns: 30px minmax(0, 1fr); }
+  .cap .tags { grid-column: 2; justify-content: flex-start; padding-top: 0; }
+  .proj .kit { margin-left: 0; }
+}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-drag" viewBox="0 0 24 24"><path d="m18 8 4 4-4 4"/><path d="M2 12h20"/><path d="m6 8-4 4 4 4"/></symbol>
+</svg>
+
+<div class="wrap" id="inicio">
+  <aside>
+    <div class="who">
+      <span class="status"><span class="dot" aria-hidden="true"></span>Aceitando novos projetos</span>
+      <h1>Vinicius <span>Flor</span></h1>
+      <p class="st">Desenho e programo <b>sites</b>, <b>marcas</b> e <b>atendimento no WhatsApp com IA</b> para empresas que querem ser levadas a sério.</p>
+      <div class="meta"><span><svg class="ic"><use href="#i-pin"/></svg>São Paulo, SP</span><span><svg class="ic"><use href="#i-clock"/></svg>Respondo no mesmo dia</span></div>
+      <div class="row"><a class="btn" href="https://wa.me/5584981710828?text=Oi%2C%20Vinicius!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20uma%20pr%C3%A9via%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Pedir prévia grátis<svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <ol class="pv">
+        <li><svg class="ic"><use href="#i-msg"/></svg>Você me manda o Instagram ou o site atual.</li>
+        <li><svg class="ic"><use href="#i-pen"/></svg>Eu monto a primeira tela com a sua marca.</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Você só paga se quiser seguir.</li>
+      </ol>
+    </div>
+    <div class="group" id="servicos">
+      <span class="eyebrow">O que eu faço</span>
+      <div class="sv"><div class="vis v-site" aria-hidden="true">
+  <div class="mb"><i></i><div><img src="img/pz-palmeira.webp" alt=""><b>A 50 passos do mar.</b></div></div>
+  <div class="mp"><img src="img/pz-quarto.webp" alt=""></div>
+</div><div class="tx"><b><svg class="ic"><use href="#i-monitor"/></svg>Sites</b><span>Rápidos no celular e no seu domínio.</span></div></div>
+      <div class="sv"><div class="vis v-brand" aria-hidden="true"><div class="in">
+  <div class="mk"><span>C</span><b>Oficina<br>Cumaru</b></div>
+  <div class="sw">
+    <div><i style="background:#15110d"></i>#15110D</div>
+    <div><i style="background:#efe6da"></i>#EFE6DA</div>
+    <div><i style="background:#a8927a"></i>#A8927A</div>
+    <div><i style="background:#1f7a4a"></i>#1F7A4A</div>
+  </div>
+</div></div><div class="tx"><b><svg class="ic"><use href="#i-pen"/></svg>Identidade visual</b><span>Logo, cores e fontes do negócio.</span></div></div>
+      <div class="sv"><div class="vis v-chat" aria-hidden="true"><div class="in">
+  <div class="hdr"><i>C</i><span><b>Oficina Cumaru</b>assistente com IA · online</span></div>
+  <p class="me">Oi! Quero orçar uma cozinha.</p>
+  <p class="bot">Claro! Qual o tamanho dela?</p>
+  <div class="ch"><span>Até 6 m²</span><span>6 a 10 m²</span><span>+10 m²</span></div>
+  <div class="sum"><b>Novo orçamento para você</b><span>Cozinha · 8 m² · com projeto</span></div>
+</div></div><div class="tx"><b><svg class="ic"><use href="#i-spark"/></svg>Atendimento no WhatsApp com IA</b><span>Responde na hora e te passa só quem quer orçamento.</span></div></div>
+    </div>
+  </aside>
+
+  <main id="trabalhos">
+    <div class="mh"><h2>Trabalhos selecionados</h2><span>1 produto próprio · 3 marcas fictícias</span></div>
+    <p class="touch"><svg class="ic"><use href="#i-drag"/></svg>Toque num site para ver a página inteira</p>
+    <div class="proj hov" tabindex="0">
+      <div class="shot"><div class="browser">
+  <div class="bar"><i></i><i></i><i></i><span>radar-imoveis-sp.vercel.app</span></div>
+  <div class="view">
+    <div class="page s ra">
+      <div class="nv"><b><i></i>radar</b><span><span>Como funciona</span><span>Entrar</span><em>Pedir convite</em></span></div>
+      <div class="hr">
+        <div>
+          <small>BETA FECHADO · SÃO PAULO</small>
+          <h4>Veja o imóvel certo antes de todo mundo.</h4>
+          <p>Marque no mapa onde você quer morar. O Radar vigia vários sites de imóveis e avisa por e-mail ou no WhatsApp minutos depois que algo novo aparece.</p>
+          <div class="fm"><span>voce@email.com</span><em>Pedir convite</em></div>
+          <small class="ft">Grátis durante o beta.</small>
+        </div>
+        <div class="map">
+          <i class="rd h1"></i><i class="rd h2"></i><i class="rd v1"></i><i class="rd v2"></i>
+          <i class="ci"></i><i class="ce"></i>
+          <span class="pin" style="left:31%;top:24%">4,9 mil</span><span class="pin" style="left:57%;top:50%">4,0 mil</span><span class="pin out" style="left:76%;top:6%">5,2 mil</span>
+          <div class="card"><div class="ln1"><i></i>Novo no radar Pinheiros · há 4 min</div><b>Rua Cardeal Arcoverde, 1.920</b><span>R$ 4.860/mês no total · 68 m² · 2 quartos</span></div>
+        </div>
+      </div>
+      <div class="how">
+        <div><small>01</small><h5>A área é um raio no mapa</h5><p>Escolha um ponto, como o metrô ou o trabalho, e até onde aceita morar.</p></div>
+        <div><small>02</small><h5>Custo total de verdade</h5><p>Aluguel, condomínio e IPTU somados, com aviso quando falta algum valor.</p></div>
+        <div><small>03</small><h5>Um imóvel, várias fontes</h5><p>O mesmo apartamento em três sites aparece uma vez, com o preço de cada um.</p></div>
+      </div>
+    </div>
+  </div>
+</div><div class="phone">
+  <div class="ram">
+    <div class="hd"><b><i></i>radar</b><span>+</span></div>
+    <div class="sel">Pinheiros · 2q · aluguel<span>⌄</span></div>
+    <div class="seg"><span class="on">Novos · 3</span><span>Todos · 5</span><span>Mapa</span></div>
+    <div class="map"><i class="rd h1"></i><i class="rd v1"></i><i class="rd v2"></i><i class="ci"></i><i class="ce"></i><span class="pin new" style="left:22%;top:18%">4,9 mil</span><span class="pin" style="left:54%;top:62%">4,0 mil</span><span class="km">1,2 km</span></div>
+    <small>VERIFICADO HÁ 2 MIN</small>
+    <div class="rows">
+      <div class="on"><i></i><div><b>Rua Cardeal Arcoverde<em></em></b><span>68 m² · 2q · ZAP + QuintoAndar</span></div><p>R$ 4.860<span>há 4 min</span></p></div>
+      <div><i></i><div><b>Rua Fradique Coutinho<em></em></b><span>55 m² · 2q · QuintoAndar</span></div><p>R$ 3.985<span>há 2 h</span></p></div>
+      <div><i></i><div><b>Rua Artur de Azevedo<em></em></b><span>82 m² · 2q · sem IPTU</span></div><p>R$ 4.880<span>há 3 h</span></p></div>
+      <div><i></i><div><b>Rua Teodoro Sampaio</b><span>74 m² · 2q · caiu R$ 300</span></div><p>R$ 4.730<span>há 1 h</span></p></div>
+    </div>
+    <div class="tb"><span class="on">◎<br>Radares</span><span>▢<br>Minha lista</span><span>⚙<br>Ajustes</span></div>
+  </div>
+</div></div>
+      <div class="cap"><span class="n">01</span><div><h3>Radar <span class="chip"><span class="dot" aria-hidden="true"></span>Meu produto, em beta</span></h3><p>Avisa por e-mail ou WhatsApp quando aparece um imóvel novo na área que você marcou no mapa. Design, marca e código.</p></div><div class="tags"><span>Produto</span><span>Site</span><span>Marca</span></div></div>
+      <div class="kit">
+  <div class="kl kl-ra"><b><i></i>radar</b></div>
+  <div class="kc"><span class="kh">Cores</span><div class="ks"><div><i style="background:#0a0a0a"></i><code>#0A0A0A</code></div><div><i style="background:#f5f5f5"></i><code>#F5F5F5</code></div><div><i style="background:#525252"></i><code>#525252</code></div><div><i style="background:#00c16a"></i><code>#00C16A</code></div></div></div>
+  <div class="kt"><span class="kh">Tipografia</span><b style="font-family:var(--f-sans);font-weight:600;letter-spacing:-0.04em">Aa</b><span>Geist<br>Geist Mono</span></div>
+</div>
+    </div>
+    <div class="proj hov" tabindex="0">
+      <div class="shot"><div class="browser">
+  <div class="bar"><i></i><i></i><i></i><span>oficinacumaru.com.br</span></div>
+  <div class="view">
+    <div class="page s cu">
+      <div class="nv"><b>Oficina Cumaru</b><span><span>Projetos</span><span>Processo</span><span>Contato</span></span></div>
+      <div class="hr">
+        <div><small>Marcenaria autoral · sob medida</small><h4>Móveis feitos para durar uma vida.</h4><p>Projetamos e fabricamos cada peça na nossa oficina, com madeira certificada e acabamento à mão.</p><span class="b">Pedir orçamento</span></div>
+        <div class="ph"><img src="img/mc-cadeira.webp" alt=""></div>
+      </div>
+      <div class="det">
+        <div class="t"><h5>O detalhe é o projeto.</h5><p>Encaixes, puxadores e curvas desenhados para cada cômodo. Nada sai de catálogo.</p></div>
+        <figure><div><img src="img/mc-juncao.webp" alt=""></div><figcaption>Armário em freijó</figcaption></figure>
+        <figure><div><img src="img/mc-ripado.webp" alt=""></div><figcaption>Banco ripado</figcaption></figure>
+      </div>
+      <div class="ft"><b>Vamos conversar sobre o seu projeto?</b><span class="wa">Chamar no WhatsApp</span></div>
+    </div>
+  </div>
+</div><div class="phone">
+  <div class="m cum">
+    <div class="nv"><b>Oficina Cumaru</b><span></span></div>
+    <div class="tx"><small>Marcenaria autoral</small><h4>Móveis feitos para durar uma vida.</h4></div>
+    <div class="ph"><img src="img/mc-cadeira.webp" alt=""></div>
+    <div class="ac"><div class="b">Pedir orçamento</div></div>
+  </div>
+</div></div>
+      <div class="cap"><span class="n">02</span><div><h3>Oficina Cumaru</h3><p>Site conceito para marcenaria autoral: tons de madeira, serifa clássica e orçamento direto no WhatsApp.</p></div><div class="tags"><span>Site</span><span>Marca</span><span>WhatsApp</span></div></div>
+      <div class="kit">
+  <div class="kl kl-cu"><span class="mk">C</span><b>Oficina<br>Cumaru</b></div>
+  <div class="kc"><span class="kh">Cores</span><div class="ks"><div><i style="background:#15110d"></i><code>#15110D</code></div><div><i style="background:#efe6da"></i><code>#EFE6DA</code></div><div><i style="background:#a8927a"></i><code>#A8927A</code></div><div><i style="background:#1f7a4a"></i><code>#1F7A4A</code></div></div></div>
+  <div class="kt"><span class="kh">Tipografia</span><b style="font-family:var(--f-serif)">Aa</b><span>DM Serif Display<br>Geist</span></div>
+</div>
+    </div>
+    <div class="proj hov" tabindex="0">
+      <div class="shot"><div class="browser">
+  <div class="bar"><i></i><i></i><i></i><span>dunaclara.com.br</span></div>
+  <div class="view">
+    <div class="page s du">
+      <div class="hr">
+        <img src="img/pz-palmeira.webp" alt="">
+        <div class="nv"><b>Duna Clara</b><span>Quartos<span>Café</span><span>PT · EN · ES</span></span></div>
+        <div class="tx"><small>Pousada · beira-mar</small><h4>A 50 passos do mar.</h4></div>
+        <div class="bk"><div><small>ENTRADA</small>12 dez</div><div><small>SAÍDA</small>16 dez</div><div><small>HÓSPEDES</small>2 adultos</div><em>Reservar</em></div>
+      </div>
+      <div class="rooms">
+        <div class="h"><h5>Quartos</h5><span>Reserva direta, sem taxa</span></div>
+        <div class="grid">
+          <div class="room"><div><img src="img/pz-quarto.webp" alt=""></div><p>Suíte Brisa <span>R$ 420 / noite</span></p></div>
+          <div class="room"><div><img src="img/pz-piscina.webp" alt=""></div><p>Bangalô Jardim <span>R$ 560 / noite</span></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><div class="phone">
+  <div class="m dum">
+    <div class="hr">
+      <img src="img/pz-palmeira.webp" alt="">
+      <div class="nv"><b>Duna Clara</b><span></span></div>
+      <div class="tx"><small>Pousada · beira-mar</small><h4>A 50 passos do mar.</h4></div>
+    </div>
+    <div class="bk">
+      <div class="d"><div><small>ENTRADA</small>12 dez</div><div><small>SAÍDA</small>16 dez</div></div>
+      <div class="b">Ver quartos livres</div>
+    </div>
+  </div>
+</div></div>
+      <div class="cap"><span class="n">03</span><div><h3>Duna Clara</h3><p>Site conceito para pousada de praia: fotos grandes, clima de areia e reserva na primeira tela.</p></div><div class="tags"><span>Site</span><span>Reserva</span></div></div>
+      <div class="kit">
+  <div class="kl kl-du"><span class="mk"></span><b>Duna Clara</b></div>
+  <div class="kc"><span class="kh">Cores</span><div class="ks"><div><i style="background:#1d2a2e"></i><code>#1D2A2E</code></div><div><i style="background:#f3eee6"></i><code>#F3EEE6</code></div><div><i style="background:#e6e1d8"></i><code>#E6E1D8</code></div><div><i style="background:#7c8a8e"></i><code>#7C8A8E</code></div></div></div>
+  <div class="kt"><span class="kh">Tipografia</span><b style="font-family:var(--f-serif);font-style:italic">Aa</b><span>DM Serif Display<br>Geist</span></div>
+</div>
+    </div>
+    <div class="proj hov" tabindex="0">
+      <div class="shot"><div class="browser">
+  <div class="bar"><i></i><i></i><i></i><span>casaticao.com.br</span></div>
+  <div class="view">
+    <div class="page s lu">
+      <div class="nv"><b>casa<i>tição</i></b><em>Reservar</em></div>
+      <div class="hr">
+        <div class="ph"><img src="img/rs-molho.webp" alt=""></div>
+        <div class="tx"><small>Restaurante · cozinha na brasa</small><h4>Cozinha de fogo, menu de sete tempos.</h4><p>Ingredientes de pequenos produtores, preparados na brasa.</p><span class="b">Reservar mesa</span></div>
+      </div>
+      <div class="menu">
+        <div class="ph"><img src="img/rs-salao.webp" alt=""></div>
+        <div class="ph"><img src="img/rs-prato.webp" alt=""></div>
+        <div><h5>Menu da semana</h5><ol><li>Pão de fermentação natural <span>01</span></li><li>Peixe curado, limão-cravo <span>02</span></li><li>Abóbora na brasa <span>03</span></li><li>Costela, 12 horas <span>04</span></li></ol></div>
+      </div>
+    </div>
+  </div>
+</div><div class="phone">
+  <div class="m lum">
+    <div class="nv"><b>casa<i>tição</i></b><span></span></div>
+    <div class="ph"><img src="img/rs-molho.webp" alt=""></div>
+    <div class="tx"><h4>Cozinha de fogo.</h4><div class="b">Reservar mesa</div></div>
+  </div>
+</div></div>
+      <div class="cap"><span class="n">04</span><div><h3>Casa Tição</h3><p>Site conceito para restaurante de cozinha na brasa: fundo escuro, tipografia forte e reserva de mesa.</p></div><div class="tags"><span>Site</span><span>Marca</span></div></div>
+      <div class="kit">
+  <div class="kl kl-lu"><b>casa<i>tição</i></b></div>
+  <div class="kc"><span class="kh">Cores</span><div class="ks"><div><i style="background:#0e0d0c"></i><code>#0E0D0C</code></div><div><i style="background:#f2ede6"></i><code>#F2EDE6</code></div><div><i style="background:#e0803a"></i><code>#E0803A</code></div><div><i style="background:#a39c92"></i><code>#A39C92</code></div></div></div>
+  <div class="kt"><span class="kh">Tipografia</span><b style="font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-0.04em">Aa</b><span>Archivo<br>Geist Mono</span></div>
+</div>
+    </div>
+    <div class="ba">
+      <div class="h"><div><span class="eyebrow">Antes e depois</span><h2>O mesmo negócio, outra impressão.</h2></div><span class="hint"><svg class="ic"><use href="#i-drag"/></svg>Arraste para comparar</span></div>
+      <div class="cmp" id="cmp">
+  <div class="browser">
+    <div class="bar"><i></i><i></i><i></i><span>oficinacumaru.com.br</span></div>
+    <div class="view">
+      <div class="lay after">
+        <div class="s cu" style="height:100%">
+          <div class="nv"><b>Oficina Cumaru</b><span><span>Projetos</span><span>Processo</span><span>Contato</span></span></div>
+          <div class="hr">
+            <div><small>Marcenaria autoral · sob medida</small><h4>Móveis feitos para durar uma vida.</h4><p>Projetamos e fabricamos cada peça na nossa oficina, com madeira certificada e acabamento à mão.</p><span class="b">Pedir orçamento</span></div>
+            <div class="ph"><img src="img/mc-cadeira.webp" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="lay before">
+        <div class="old">
+          <div class="hd2"><b>Marcenaria Cumaru</b><span>Ligue para nós!</span></div>
+          <nav><span>Home</span>|<span>Empresa</span>|<span>Produtos</span>|<span>Cozinhas</span>|<span>Dormitórios</span>|<span>Galeria</span>|<span>Orçamento</span>|<span>Contato</span></nav>
+          <div class="mq">*** SEJA BEM VINDO AO NOSSO SITE!!! FAÇA SEU ORÇAMENTO SEM COMPROMISSO ***</div>
+          <div class="bd">
+            <aside><b>Links úteis</b><u>Nossa história</u><u>Trabalhe conosco</u><u>Mapa do site</u><u>Downloads</u></aside>
+            <div>
+              <h5>Seja bem vindo!</h5>
+              <p>A Marcenaria Cumaru atua no ramo de móveis sob medida oferecendo qualidade e excelência no atendimento a seus clientes, buscando sempre a satisfação total através de produtos de qualidade.</p>
+              <div class="g"><div>foto</div><div>foto</div><div>foto</div><div>foto</div></div>
+              <div class="ld"><i></i>carregando galeria…</div>
+            </div>
+          </div>
+          <div class="f2">© 2016 Marcenaria Cumaru · Todos os direitos reservados · Melhor visualizado em 1024x768</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hd" aria-hidden="true"></div>
+  <span class="tag b">Antes</span><span class="tag a">Depois</span>
+  <input type="range" min="0" max="100" value="50" id="cmp-range" aria-label="Comparar o site antigo com o novo">
+</div>
+      <div class="diff">
+  <div><span class="was">Texto genérico de 2016</span><span class="now">Uma frase e a foto do trabalho</span></div>
+  <div><span class="was">Telefone fixo e 8 menus</span><span class="now">Um botão para o WhatsApp</span></div>
+  <div><span class="was">Galeria travando no 4G</span><span class="now">Meta de abrir em até 2,5 s</span></div>
+</div>
+    </div>
+    <div class="faq">
+      <span class="eyebrow">Dúvidas comuns</span>
+      <details><summary>E depois que o site fica pronto?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Você pode seguir sozinho ou contratar uma manutenção mensal, com atualizações e suporte.</p></details>
+      <details><summary>A IA no WhatsApp pode falar besteira para o meu cliente?<svg class="ic"><use href="#i-plus"/></svg></summary><p>Ela só responde com as informações que você aprovou, como horário, preço, endereço e cardápio. O que ela não sabe, passa para você.</p></details>
+    </div>
+  </main>
+
+  <section class="contact" id="contato" aria-labelledby="ct-t">
+    <div class="h"><span class="av" aria-hidden="true">VF</span><p><b>Vinicius Flor</b>Quem responde é quem faz o seu site.</p></div>
+    <div>
+      <h2 id="ct-t">Vamos ver o seu?</h2>
+      <p class="lead">Me mande o nome da empresa ou o endereço do site. Eu respondo com um diagnóstico e uma prévia com a sua marca. O orçamento vem depois, sob medida para o tamanho do projeto.</p>
+    </div>
+    <div class="lines">
+  <div class="ln"><span class="ico"><svg class="ic"><use href="#i-msg"/></svg></span><span class="tx"><small>WhatsApp</small><span class="v" id="wa">(84) 98171-0828</span></span><button type="button" data-copy="wa"><svg class="ic"><use href="#i-copy"/></svg><b>Copiar</b></button></div>
+</div>
+<a class="btn wa-go" href="https://wa.me/5584981710828?text=Oi%2C%20Vinicius!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20uma%20pr%C3%A9via%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Abrir conversa no WhatsApp<svg class="ic"><use href="#i-arrow"/></svg></a>
+  </section>
+
+  <a class="mcta btn" href="https://wa.me/5584981710828?text=Oi%2C%20Vinicius!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20uma%20pr%C3%A9via%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener" id="mcta" aria-hidden="true" tabindex="-1">Pedir prévia grátis<svg class="ic"><use href="#i-arrow"/></svg></a>
+  <footer><span>© Vinicius Flor · São Paulo</span><span class="credit">Fotos: Unsplash. Oficina Cumaru, Duna Clara e Casa Tição são marcas fictícias.</span></footer>
+</div>
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cmp = document.getElementById('cmp');
+  if (cmp) {
+    const range = document.getElementById('cmp-range');
+    range.addEventListener('input', () => cmp.style.setProperty('--pos', range.value + '%'));
+    // ao aparecer, a divisória desliza uma vez para mostrar que dá para arrastar
+    if (!reduce && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => {
+        if (!es[0].isIntersecting) return; io.disconnect();
+        const t0 = performance.now();
+        const step = now => { const k = Math.min(1, (now - t0) / 1200), e = 1 - Math.pow(1 - k, 3), v = 78 + (50 - 78) * e;
+          cmp.style.setProperty('--pos', v + '%'); range.value = Math.round(v); if (k < 1) requestAnimationFrame(step); };
+        requestAnimationFrame(step);
+      }, { threshold: .5 });
+      io.observe(cmp);
+    }
+  }
+  document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
+    const src = document.getElementById(btn.dataset.copy); const txt = src.textContent.trim();
+    const lb = btn.querySelector('b') || btn;
+    const ok = () => { lb.textContent = 'Copiado'; setTimeout(() => (lb.textContent = 'Copiar'), 1600); };
+    const fb = () => { const r = document.createRange(); r.selectNodeContents(src); const s = getSelection(); s.removeAllRanges(); s.addRange(r); lb.textContent = 'Selecionado'; };
+    try { navigator.clipboard.writeText(txt).then(ok, fb); } catch (e) { fb(); }
+  }));
+})();
+</script>
+<script>
+(() => {
+  // celular: tocar no site rola a página dele; o botão fixo aparece depois do topo e some no contato
+  if (matchMedia('(hover: none)').matches) {
+    document.querySelectorAll('.proj.hov').forEach(p => p.addEventListener('click', e => {
+      if (e.target.closest('a, button, input')) return;
+      if (!p.classList.toggle('on')) p.blur();
+    }));
+  }
+  const cta = document.getElementById('mcta');
+  const row = document.querySelector('.who .row'), ct = document.getElementById('contato');
+  const upd = () => {
+    const h = innerHeight, r1 = row.getBoundingClientRect(), r2 = ct.getBoundingClientRect();
+    const v = r1.bottom < 0 && r2.top > h;
+    cta.classList.toggle('show', v); cta.setAttribute('aria-hidden', v ? 'false' : 'true'); cta.tabIndex = v ? 0 : -1;
+  };
+  addEventListener('scroll', upd, { passive: true });
+  addEventListener('resize', upd); upd();
+})();
+</script>
+
+</html>
